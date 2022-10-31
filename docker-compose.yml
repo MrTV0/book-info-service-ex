@@ -2,7 +2,7 @@ services:
   db:
     image: mysql:latest
     volumes:
-      - mysql_data_container:/var/lib/mysql
+      - db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
