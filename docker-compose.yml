@@ -22,7 +22,7 @@ services:
   book-info-service:
     image: miverboven/book-info-service-ex
     ports:
-      - '8051:8051'
+      - '8051:3306'
     environment:
       MYSQL_DB_PORT: 8051
 
