@@ -4,6 +4,7 @@ services:
     image: "mysql:latest"
     environment:
       MYSQL_ROOT_PASSWORD: abc123
+      MYSQL_DB_PASSWORD: abc123
     ports:
       - "3306:3306"
     volumes:
@@ -25,6 +26,8 @@ services:
       - '8051:8051'
     environment:
       MYSQL_DB_PORT: 3306
+      MYSQL_DB_USER: root
+      MYSQL_DB_PASSWORD: abc123
 
 volumes:
  mysql_data_container:
