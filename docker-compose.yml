@@ -4,6 +4,7 @@ services:
     image: "mysql:latest"
     environment:
       MYSQL_ROOT_PASSWORD: abc123
+      MYSQL_DATABASE: database
       MYSQL_DB_PASSWORD: abc123
     ports:
       - "3306:3306"
