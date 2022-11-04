@@ -27,8 +27,6 @@ services:
       - '8051:8051'
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/database?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false
-    depends_on:
-      - mysql
 
 volumes:
  mysql_data_container:
