@@ -1,9 +1,4 @@
 version: "3.9"
-
-networks:
-  my-network:
-    driver: bridge
-
 services:
   mysql:
     image: "mysql:latest"
@@ -14,8 +9,6 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data_container:/var/lib/mysql
-    networks:
-      - my-network
 
   phpmyadmin:
     depends_on:
@@ -31,8 +24,10 @@ services:
     image: miverboven/book-info-service-ex
     ports:
       - '8051:8051'
-    networks:
-      - my-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/database?autoReconnect=true&useSSL=false
+    depends_on:
+      - mysql
 
 volumes:
  mysql_data_container:
