@@ -22,12 +22,10 @@ services:
   
   book-info-service:
     image: miverboven/book-info-service-ex
+    links:
+      - "mysql"
     ports:
       - '8051:8051'
-    environment:
-      MYSQL_DB_PORT: 3306
-      MYSQL_DB_USER: root
-      MYSQL_DB_PASSWORD: abc123
 
 volumes:
  mysql_data_container:
