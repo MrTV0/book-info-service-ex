@@ -21,9 +21,9 @@ services:
       MYSQL_ROOT_PASSWORD: abc123
   
   book-info-service:
-    image: miverboven/book-info-service-ex
-    links:
+  depends_on:
       - mysql
+    image: miverboven/book-info-service-ex
     ports:
       - '8051:8051'
 
