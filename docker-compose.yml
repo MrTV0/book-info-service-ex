@@ -23,7 +23,7 @@ services:
   book-info-service:
     image: miverboven/book-info-service-ex
     links:
-      - "mysql"
+      - mysql
     ports:
       - '8051:8051'
 
